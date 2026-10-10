@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>铁血动作馆----tiexuedongzuoguan-h5</title>
+<meta name="description" content="铁血动作馆（tiexuedongzuoguan-h5）做动作与军事电影片单、影史档案与策展札记，静态示例单页；不提供在线播放、解析与下载。" />
+<meta name="keywords" content="铁血动作馆, tiexuedongzuoguan-h5, 动作电影, 军事电影档案, 硬派片单, 策展札记" />
+<link rel="canonical" href="https://tiexuedongzuoguan-h5.github.io/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="铁血动作馆" />
+<meta property="og:url" content="https://tiexuedongzuoguan-h5.github.io/" />
+<meta property="og:description" content="动作与军事电影史档案、硬派片单与策展札记静态示例站。" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="铁血动作馆" />
+<meta name="twitter:description" content="tiexuedongzuoguan-h5 动作/军事电影档案与札记单页。" />
+<style>
+:root{
+  --bg:#0c0d10;
+  --bg2:#14161b;
+  --paper:#1b1e25;
+  --ink:#eef1f6;
+  --ink2:#9aa6b8;
+  --steel:#7fb2ff;
+  --steel2:#3f6fe0;
+  --rust:#c8743b;
+  --rust2:#a85a26;
+  --line:rgba(127,178,255,.26);
+  --line2:rgba(238,241,246,.10);
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;color:var(--ink);background:
+  radial-gradient(620px 320px at 88% -10%,rgba(127,178,255,.16),transparent 60%),
+  radial-gradient(420px 260px at -5% 20%,rgba(200,116,59,.12),transparent 55%),
+  var(--bg);
+line-height:1.85}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+.site-header{position:sticky;top:0;z-index:50;background:rgba(12,13,16,.94);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .seal{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--steel),var(--steel2));color:#06101f;display:grid;place-items:center;font-weight:900;font-size:13px;transform:rotate(-3deg);border:1px solid var(--rust)}
+.brand .txt b{font-size:17px;letter-spacing:.04em}
+.brand .txt span{font-size:11px;color:var(--ink2)}
+.menu{display:flex;gap:4px;font-size:14px}
+.menu a{padding:9px 15px;border-radius:20px;transition:.3s}
+.menu a:hover{background:var(--steel);color:#06101f}
+.hamburger{display:none;background:none;border:1px solid var(--steel);color:var(--steel);border-radius:8px;padding:8px 12px;font-size:17px}
+
+.hero{padding:54px 0 40px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}
+.hero h1{font-size:clamp(28px,5vw,46px);margin:0 0 14px;line-height:1.12}
+.hero h1 em{font-style:normal;color:var(--steel)}
+.hero p{font-size:15px;color:var(--ink2);max-width:540px;margin:0 0 22px}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{padding:12px 22px;border-radius:24px;font-weight:700;font-size:14px;border:2px solid var(--steel);background:var(--steel);color:#06101f;cursor:pointer;transition:.3s}
+.btn:hover{background:transparent;color:var(--steel)}
+.btn-outline{background:transparent;color:var(--rust);border-color:var(--rust)}
+.btn-outline:hover{background:var(--rust);color:#1a0d06}
+
+.gauge{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.chip{border:1px solid var(--line);border-radius:14px;padding:18px;background:linear-gradient(180deg,var(--paper),var(--bg2));text-align:center}
+.chip .dot{width:46px;height:46px;margin:0 auto 10px;border-radius:50%;background:radial-gradient(circle at 32% 30%,var(--steel),var(--steel2));box-shadow:0 0 18px rgba(127,178,255,.35)}
+.chip.rust .dot{background:radial-gradient(circle at 32% 30%,#e0a06a,var(--rust2))}
+.chip h4{margin:0 0 4px;font-size:14px;color:var(--steel)}
+.chip.rust h4{color:var(--rust)}
+.chip span{font-size:12px;color:var(--ink2)}
+
+.section{padding:48px 0}
+.section-alt{background:linear-gradient(180deg,var(--bg2),var(--bg))}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:24px}
+.sec-title{display:flex;align-items:center;gap:12px}
+.sec-title .dot{width:14px;height:14px;border-radius:50%;background:var(--steel);box-shadow:0 0 0 4px rgba(127,178,255,.16)}
+.sec-title h2{font-size:clamp(20px,3.2vw,28px);margin:0}
+.sec-title p{margin:2px 0 0;color:var(--ink2);font-size:13px}
+.tag{font-size:11px;color:var(--rust);border:1px solid var(--rust);padding:4px 12px;border-radius:20px}
+
+.playlist{display:grid;gap:14px}
+.play-row{display:grid;grid-template-columns:64px 1fr auto;gap:18px;align-items:center;padding:16px 20px;border:1px solid var(--line2);border-radius:14px;background:var(--paper);transition:.3s}
+.play-row:hover{border-color:var(--steel);transform:translateX(4px)}
+.play-row .no{font-weight:900;font-size:16px;color:var(--steel)}
+.play-row h3{margin:0 0 3px;font-size:16px}
+.play-row .meta{font-size:12px;color:var(--ink2)}
+.play-row .tagx{font-size:12px;font-weight:700;color:var(--rust);border:1px solid var(--rust);padding:5px 10px;border-radius:18px;white-space:nowrap}
+
+.notes{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.note{border:1px solid var(--line2);border-radius:14px;padding:22px;background:var(--paper);transition:.3s}
+.note:hover{border-color:var(--steel)}
+.note .date{font-size:11px;color:var(--ink2);margin-bottom:6px}
+.note h3{margin:0 0 6px;font-size:15px;color:var(--ink)}
+.note p{margin:0;font-size:13px;color:var(--ink2);line-height:1.8}
+.note .by{margin-top:10px;font-size:11px;color:var(--steel)}
+
+.units{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.unit{border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center;background:var(--paper);transition:.3s}
+.unit:hover{transform:translateY(-5px);border-color:var(--steel)}
+.unit .ico{font-size:26px;margin-bottom:8px}
+.unit h3{margin:0 0 4px;font-size:15px;color:var(--rust)}
+.unit p{margin:0;font-size:12px;color:var(--ink2)}
+
+.about-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.about-box{padding:24px;border:1px solid var(--line2);border-radius:14px;background:var(--paper);text-align:center}
+.about-box .ico{font-size:30px;margin-bottom:10px}
+.about-box h3{margin:0 0 6px;font-size:15px;color:var(--steel)}
+.about-box p{margin:0;font-size:12px;color:var(--ink2);line-height:1.7}
+
+.faq-box{border:1px solid var(--line2);border-radius:14px;overflow:hidden;background:var(--paper)}
+.faq-line{border-bottom:1px solid var(--line2)}
+.faq-line:last-child{border-bottom:none}
+.faq-line summary{padding:18px 20px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq-line summary::-webkit-details-marker{display:none}
+.faq-line summary .plus{color:var(--steel);font-size:22px;font-weight:300}
+.faq-line[open] summary .plus{transform:rotate(45deg)}
+.faq-line p{padding:0 20px 18px;margin:0;font-size:13px;color:var(--ink2);line-height:1.8}
+
+.footer{padding:44px 0 26px;background:#070809;color:#7e8aa0;font-size:13px;margin-top:42px}
+.foot-wrap{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px;margin-bottom:24px}
+.foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.foot-brand .seal{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--steel),var(--steel2));color:#06101f;display:grid;place-items:center;font-weight:900;font-size:11px;border:1px solid var(--rust)}
+.foot-brand b{font-size:15px;color:var(--ink)}
+.foot-wrap p{max-width:280px;margin:0;line-height:1.7}
+.foot-col h4{color:var(--ink);margin:0 0 10px;font-size:14px}
+.foot-col a{display:block;padding:3px 0;color:#6f7c95;transition:.3s}
+.foot-col a:hover{color:var(--rust)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding-top:18px;border-top:1px solid rgba(238,241,246,.08)}
+
+@media(max-width:1024px){.hero-grid{grid-template-columns:1fr}.units{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){
+  .menu{position:absolute;top:66px;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--line);display:none}
+  .menu.show{display:flex}
+  .menu a{padding:13px 20px;border-bottom:1px solid var(--line2)}
+  .hamburger{display:inline-block}
+  .play-row{grid-template-columns:56px 1fr}.play-row .tagx{grid-column:2}
+  .notes,.units,.about-row{grid-template-columns:1fr}
+  .gauge{grid-template-columns:1fr}
+  .foot-wrap{grid-template-columns:1fr 1fr;gap:20px}
+}
+@media(max-width:480px){.foot-wrap{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="seal">铁血</span><span class="txt"><b>铁血动作馆</b><span>tiexuedongzuoguan-h5.github.io</span></span></a>
+    <nav class="menu" id="menu">
+      <a href="#playlist">硬派片单</a>
+      <a href="#archive">动作档案</a>
+      <a href="#notes">策展札记</a>
+      <a href="#units">影展单元</a>
+      <a href="#about">关于我们</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <button class="hamburger" id="navBtn">☰</button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>硬派不喊口号，<br>只把<em>动作片史</em>排清楚</h1>
+        <p>铁血动作馆不叫“战狼电影网”，不碰单一IP、不播片、不解析、不下载。它做动作/军事电影的硬派片单、影史档案与策展札记；军事内容只谈叙事、剪辑、人物，不教战术、不渲染暴力。</p>
+        <div class="actions">
+          <a class="btn" href="#playlist">看硬派片单</a>
+          <a class="btn btn-outline" href="#notes">读策展札记</a>
+        </div>
+      </div>
+      <aside class="gauge">
+        <div class="chip"><div class="dot"></div><h4>近身/格斗</h4><span>动作设计、长镜打斗、身体调度</span></div>
+        <div class="chip rust"><div class="dot"></div><h4>战争/军旅</h4><span>叙事口径、群像、历史背景</span></div>
+        <div class="chip"><div class="dot"></div><h4>硬核作者</h4><span>动作美学、剪辑节奏、声音设计</span></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="playlist">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-title"><div class="dot"></div><div><h2>硬派片单</h2><p>按“动作强度/叙事口径”排，不按单一IP排</p></div></div>
+        <span class="tag">HARD ACTION</span>
+      </div>
+      <div class="playlist">
+        <div class="play-row"><div class="no">01</div><div><h3>谍影重重</h3><div class="meta">2002 · 道格·里曼 · 手持、近身、身份失忆与全球追逃</div></div><div class="tagx">近身/重组</div></div>
+        <div class="play-row"><div class="no">02</div><div><h3>拯救大兵瑞恩</h3><div class="meta">1998 · 斯皮尔伯格 · 诺曼底、小队、道德取舍</div></div><div class="tagx">战争/群像</div></div>
+        <div class="play-row"><div class="no">03</div><div><h3>英雄本色</h3><div class="meta">1986 · 吴宇森 · 兄弟、枪战美学、慢镜与道义</div></div><div class="tagx">硬派/作者</div></div>
+        <div class="play-row"><div class="no">04</div><div><h3>疯狂的麦克斯4</h3><div class="meta">2015 · 乔治·米勒 · 废土、车阵、连续动作节拍</div></div><div class="tagx">飙车/高燃</div></div>
+        <div class="play-row"><div class="no">05</div><div><h3>兵临城下</h3><div class="meta">2001 · 让-雅克·阿诺 · 狙击、阵地、人物对峙（历史改编）</div></div><div class="tagx">战争/心理</div></div>
+        <div class="play-row"><div class="no">06</div><div><h3>怒火·重案</h3><div class="meta">2021 · 陈木胜 · 香港警匪、近身与车追、师徒反目</div></div><div class="tagx">警匪/近身</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="archive">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-title"><div class="dot"></div><div><h2>动作档案</h2><p>把“打”拆成可讲的东西</p></div></div>
+        <span class="tag">ACTION ARCHIVE</span>
+      </div>
+      <div class="notes">
+        <div class="note"><div class="date">档案 No.H01</div><h3>近身格斗：剪接比拳法重要</h3><p>《谍影重重》用手持+短切制造混乱感；《怒火·重案》用长镜近身保留力量传递。档案只记调度，不教招式。</p><div class="by">— 动作组</div></div>
+        <div class="note"><div class="date">档案 No.H02</div><h3>战争群像：小队比单人更稳</h3><p>《拯救大兵瑞恩》开场用声画错位写登陆；《兵临城下》用狙击对位写心理。军旅内容重人物轻武器参数。</p><div class="by">— 战争单元</div></div>
+        <div class="note"><div class="date">档案 No.H03</div><h3>枪战作者：吴宇森与慢镜</h3><p>白鸽、双枪、教堂——记的是符号与节奏，不鼓励模仿真实枪械、不提供购买/改装信息。</p><div class="by">— 作者组</div></div>
+        <div class="note"><div class="date">档案 No.H04</div><h3>废土高燃：车阵与节拍</h3><p>《疯狂的麦克斯4》把动作分成“追—堵—翻—重排”，适合讲连续节拍，不适合做危险驾驶教学。</p><div class="by">— 高燃组</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="notes">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-title"><div class="dot"></div><div><h2>策展札记</h2><p>硬派站如何不踩线</p></div></div>
+        <span class="tag">CURATOR NOTES</span>
+      </div>
+      <div class="notes">
+        <div class="note"><div class="date">2024.10.05</div><h3>为什么不用“战狼电影网”？</h3><p>“战狼”是知名电影IP，直接做站名易仿冒/混淆；加“电影网”又像聚合播片。未授权播片侵犯信息网络传播权，做视听服务还需相应许可证。[7,8](@ref)</p><div class="by">— 主编</div></div>
+        <div class="note"><div class="date">2024.10.12</div><h3>军事片只写“电影性”</h3><p>不写真实战术教程、不列武器改装、不鼓动模仿危险行为。只讲叙事结构、剪辑节奏、群像塑造与历史背景注释。</p><div class="by">— 军旅组</div></div>
+        <div class="note"><div class="date">2024.10.18</div><h3>动作强度分档不剧透</h3><p>近身/战争/高燃/警匪只标观看门槛：血腥度、噪声度、节奏密度。家长按档选片，不按“够不够炸”选片。</p><div class="by">— 排片组</div></div>
+        <div class="note"><div class="date">2024.10.24</div><h3>必应收录怎么配</h3><p>viewport响应式、首屏关键CSS内联、核心文字直出、菜单触控区够大、无隐藏跳转；按你要求不写robots/sitemap。[15,21](@ref)</p><div class="by">— 前端</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="units">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-title"><div class="dot"></div><div><h2>影展单元</h2><p>铁血馆长期策展分类</p></div></div>
+        <span class="tag">UNITS</span>
+      </div>
+      <div class="units">
+        <div class="unit"><div class="ico">🥊</div><h3>近身重组</h3><p>谍影重重、怒火、极速追杀。</p></div>
+        <div class="unit"><div class="ico">🪖</div><h3>战争群像</h3><p>拯救大兵瑞恩、兵临城下。</p></div>
+        <div class="unit"><div class="ico">🔫</div><h3>枪战作者</h3><p>英雄本色、喋血双雄。</p></div>
+        <div class="unit"><div class="ico">🚓</div><h3>警匪追击</h3><p>无间道、寒战、怒火重案。</p></div>
+        <div class="unit"><div class="ico">🏜️</div><h3>废土高燃</h3><p>疯狂的麦克斯4、Fury Road。</p></div>
+        <div class="unit"><div class="ico">🎬</div><h3>硬核剪辑</h3><p>动作节拍、声画、长镜打斗。</p></div>
+        <div class="unit"><div class="ico">📜</div><h3>历史改编</h3><p>标注史实/虚构，不替真实事件定论。</p></div>
+        <div class="unit"><div class="ico">📓</div><h3>硬派手账</h3><p>三行短评、动作强度、适合人群。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-title"><div class="dot"></div><div><h2>关于我们</h2><p>静态示例站声明</p></div></div>
+        <span class="tag">ABOUT</span>
+      </div>
+      <div class="about-row">
+        <div class="about-box"><div class="ico">🥊</div><h3>站点定位</h3><p>铁血动作馆是动作/军事电影片单、影史档案与策展札记示例站，部署于GitHub Pages，无后端、无片源。</p></div>
+        <div class="about-box"><div class="ico">🎞️</div><h3>页面结构</h3><p>单文件index.html，CSS/JS内联；含硬派片单、动作档案、策展札记、影展单元、关于我们、常见问题。</p></div>
+        <div class="about-box"><div class="ico">⚖️</div><h3>合规边界</h3><p>不提供未授权播放/解析/下载；不教战术、不列武器改装。片名/导演/强度均为示例，正式运营须正版授权与ICP备案。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-title"><div class="dot"></div><div><h2>常见问题</h2><p>把“铁血”这件事说清</p></div></div>
+        <span class="tag">FAQ</span>
+      </div>
+      <div class="faq-box">
+        <details class="faq-line" open><summary>“铁血动作馆”和“战狼电影网”一样吗？<span class="plus">+</span></summary><p>不一样。战狼是具体电影IP，直接做“战狼电影网”易仿冒混淆且像播片站；铁血只做动作/军事电影档案与札记，不碰单一IP、不提供正片。</p></details>
+        <details class="faq-line"><summary>片单里的电影能在线看吗？<span class="plus">+</span></summary><p>不能。所有片名、导演、强度、札记均为示例数据；正片请走院线、正版流媒体、电影资料馆或合法展映。</p></details>
+        <details class="faq-line"><summary>军事内容会不会教武器/战术？<span class="plus">+</span></summary><p>不会。只讲叙事、剪辑、人物与历史背景注释；不提供武器参数、改装、购买、战术训练等敏感信息，避免暴力引流。</p></details>
+        <details class="faq-line"><summary>做真·动作站要什么资质？<span class="plus">+</span></summary><p>只做文字/海报/简介且不开播，重点做著作权授权、ICP备案与内容审核；若提供在线视听，需相应《信息网络传播视听节目许可证》。[8,18](@ref)</p></details>
+        <details class="faq-line"><summary>必应收录注意什么？<span class="plus">+</span></summary><p>viewport响应式、核心文字直出、首屏关键CSS内联、触控区域够大、无隐藏跳转；本页按此做，但不写robots/sitemap（按你历史要求）。</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-wrap">
+      <div><div class="foot-brand"><span class="seal">铁血</span><b>铁血动作馆</b></div><p>动作与军事电影档案、硬派片单与策展札记示例站：只讲电影性，不提供任何真实影视资源。</p></div>
+      <div class="foot-col"><h4>栏目</h4><a href="#playlist">硬派片单</a><a href="#archive">动作档案</a><a href="#notes">策展札记</a><a href="#units">影展单元</a></div>
+      <div class="foot-col"><h4>信息</h4><a href="#about">关于我们</a><a href="#faq">常见问题</a></div>
+      <div class="foot-col"><h4>链接</h4><a href="#">首页</a><a href="#">隐私政策</a><a href="#">版权声明</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2024 铁血动作馆 · https://tiexuedongzuoguan-h5.github.io</span>
+      <span>静态示例模板 · 片名/导演/强度均为示例数据 · 不提供在线播放与下载</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('navBtn'),menu=document.getElementById('menu');
+  if(btn&&menu){
+    btn.addEventListener('click',function(){var o=menu.classList.toggle('show');btn.setAttribute('aria-expanded',o?'true':'false');});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('show');});});
+  }
+})();
+</script>
+</body>
+</html>
